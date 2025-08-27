@@ -1,0 +1,126 @@
+# Tic-Tac-Toe (C++ OOP / Minimax AI)
+<img width="372" height="280" alt="image" src="https://github.com/user-attachments/assets/b14ae641-c945-424b-abec-63883a66a5ab" />
+
+## Overview
+
+An object-oriented implementation of the classic Tic-Tac-Toe game in C++, featuring a robust human-vs-AI mode. The AI uses the **Minimax algorithm** for optimal play. This project demonstrates advanced **OOP principles** and algorithmic programming.
+
+---
+In other words, a fun project that implements OOP and algorithm integration :P
+
+---
+
+## Features
+
+- Play against computer or a second human player via command line
+- AI solves the game optimally using Minimax with alpha-beta pruning
+- Full input validation and friendly prompts
+- Clean, maintainable OOP code structure
+- Includes UML class diagram illustrating architecture
+
+---
+
+## UML Class Diagram
+
+<img width="612" height="460" alt="image" src="https://github.com/user-attachments/assets/49cc879b-be78-48c8-9eb4-1f16a97585c8" />
+
+
+*The diagram above shows clear relationships between classes, demonstrating abstraction, inheritance, and encapsulation.*
+
+---
+
+## Class Architecture
+
+| Class       | Purpose                                                                 |
+|-------------|------------------------------------------------------------------------|
+| **Game**    | Controls overall gameplay, win/draw detection, player turns, final output |
+| **Board**   | Manages game grid, validating moves, drawing board, win/draw checks      |
+| **Player**  | Abstract base class for all players; defines name, symbol, and APIs      |
+| **HumanPlayer** | Gets player moves from user input, validates them                    |
+| **AIPlayer**    | Uses Minimax to find best moves and play at optimal difficulty       |
+
+### Relationships
+
+- `Game` "has-a" `Board` and two `Player` objects
+- `Player` is extended by `HumanPlayer` and `AIPlayer`
+- `AIPlayer` adds minimax for AI logic
+
+---
+
+## OOP Concepts Used
+
+**Abstraction**:  
+The `Player` class abstracts generic player features.
+
+**Encapsulation**:  
+Private/protected members in `Board`, `Player`.
+
+**Inheritance**:  
+`HumanPlayer` and `AIPlayer` inherit from `Player`.
+
+**Polymorphism**:  
+The `makeMove()` function is declared virtual—in the main game loop, calls go through `Player*` pointers, enabling flexible player types.
+
+---
+
+## Minimax Algorithm
+
+**Minimax** is a recursive, adversarial search algorithm that simulates every possible future move to select the one with the best outcome for the AI.  
+**Alpha-beta pruning** optimizes the search by eliminating branches that cannot affect the final decision.
+
+- **Board copies** are used to simulate moves safely in recursion
+- **Score**: +10 (AI win), -10 (Human win), 0 (Draw)
+- **Depth** is used so quicker wins are preferred and longer losses are delayed
+
+**Pseudocode Example:**
+```
+int minimax(Board board, bool isMaximizing, int alpha, int beta) {
+// Base cases: checkWin or isFull
+// If maximizing: try all moves for AI, pick max score, prune with alpha
+// If minimizing: try all moves for opponent, pick min score, prune with beta
+}
+```
+
+
+---
+
+## How to Run
+
+1. **Clone the repository:**
+    ```
+    git clone https://github.com/yourusername/TicTacToe_Project.git
+    cd TicTacToe_Project
+    ```
+2. **Compile:**
+    ```
+    g++ main.cpp Game.cpp Board.cpp Player.cpp HumanPlayer.cpp AIPlayer.cpp -o TicTacToe.exe
+    ```
+3. **Play:**
+    ```
+    ./TicTacToe.exe
+    ```
+
+---
+
+## Technology Stack
+
+- **C++ (OOP, STL)**
+- Command-line interface
+- Version control: Git & GitHub
+
+---
+
+## Author & Credits
+
+Developed by **Arnav Sinha**  
+LinkedIn: https://www.linkedin.com/in/arnavsinha4334/
+
+
+---
+
+## Program Output
+
+<img width="1458" height="1198" alt="image" src="https://github.com/user-attachments/assets/c92cec67-3b44-444e-b714-392fcaba1fe9" />
+
+
+
