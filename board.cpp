@@ -40,18 +40,23 @@ void Board::reset()
 
 void Board::drawboard() const
 {
-    cout << "-------TIC----TAC----TOE-------" << endl;
-    for (int i = 0; i < 3; i++)
+    std::cout << "\n   TIC - TAC - TOE   \n"
+              << std::endl;
+    for (int i = 0; i < 3; ++i)
     {
-        cout << "| ";
-        for (int j = 0; j < 3; j++)
+        std::cout << " ";
+        for (int j = 0; j < 3; ++j)
         {
-            cout << cells[i][j] << " ";
+            std::cout << cells[i][j];
+            if (j < 2)
+                std::cout << " | ";
         }
-        cout << endl
-             << "-------------" << endl;
+        std::cout << std::endl;
+        if (i < 2)
+            std::cout << "-----------" << std::endl;
     }
-    cout << "-------Made-by-Arnav-------" << endl;
+    std::cout << "\n"
+              << std::endl;
 }
 
 bool Board::isValidMove(int row, int col) const
