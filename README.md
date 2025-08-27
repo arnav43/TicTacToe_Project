@@ -86,20 +86,21 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
 
 ## How to Run
 
-1. **Clone the repository:**
+1. **Clone the repository**
     ```
     git clone https://github.com/yourusername/TicTacToe_Project.git
     cd TicTacToe_Project
     ```
+
 2. **Compile:**
     ```
-    g++ main.cpp Game.cpp Board.cpp Player.cpp HumanPlayer.cpp AIPlayer.cpp -o TicTacToe.exe
+    g++ code/main.cpp code/game.cpp code/board.cpp code/player.cpp code/humanplayer.cpp code/aiplayer.cpp -o TicTacToe.exe
     ```
+
 3. **Play:**
     ```
     ./TicTacToe.exe
     ```
-
 ---
 
 ## Technology Stack
