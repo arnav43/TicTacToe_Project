@@ -95,10 +95,10 @@ int AIPlayer::minimax(Board board, bool isMaximizing, int alpha, int beta)
             {
                 if (board.isValidMove(row, col))
                 {
-                    char prev = board.getCell(row, col); // ✅ Save state
-                    board.setCell(row, col, oppSymbol);  // ✅ Make move
+                    char prev = board.getCell(row, col);
+                    board.setCell(row, col, oppSymbol);
                     int eval = minimax(board, true, alpha, beta);
-                    board.setCell(row, col, prev); // ✅ Restore state
+                    board.setCell(row, col, prev);
                     minEval = std::min(minEval, eval);
                     beta = std::min(beta, eval);
                     if (beta <= alpha)
