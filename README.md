@@ -3,19 +3,19 @@
 
 ## Overview
 
-An object-oriented implementation of the classic Tic-Tac-Toe game in C++, featuring a robust human-vs-AI mode. The AI uses the **Minimax algorithm** for optimal play. This project demonstrates advanced **OOP principles** and algorithmic programming.
+An object-oriented implementation of the classic Tic-Tac-Toe game in C++, featuring a robust human-vs-AI mode. The AI uses the **Minimax algorithm with alpha-beta pruning** for mathematically perfect play, making it impossible to defeat. This project demonstrates advanced **OOP principles** and algorithmic programming.
 
 ---
-In other words, a fun project that implements OOP and algorithm integration :P
+In other words, a fun project that implements OOP and algorithm integration while guaranteeing you'll never beat the computer :P
 
 ---
 
 ## Features
 
-- Play against computer or a second human player via command line
-- AI solves the game optimally using Minimax with alpha-beta pruning
-- Full input validation and friendly prompts
-- Clean, maintainable OOP code structure
+- Play against an **unbeatable AI opponent** or a second human player via command line
+- AI achieves optimal play using Minimax with alpha-beta pruning - it never loses
+- Full input validation and friendly user prompts
+- Clean, maintainable OOP code structure following industry standards
 - Includes UML class diagram illustrating architecture
 
 ---
@@ -23,7 +23,6 @@ In other words, a fun project that implements OOP and algorithm integration :P
 ## UML Class Diagram
 
 <img width="612" height="460" alt="image" src="https://github.com/user-attachments/assets/49cc879b-be78-48c8-9eb4-1f16a97585c8" />
-
 
 *The diagram above shows clear relationships between classes, demonstrating abstraction, inheritance, and encapsulation.*
 
@@ -37,13 +36,13 @@ In other words, a fun project that implements OOP and algorithm integration :P
 | **Board**   | Manages game grid, validating moves, drawing board, win/draw checks      |
 | **Player**  | Abstract base class for all players; defines name, symbol, and APIs      |
 | **HumanPlayer** | Gets player moves from user input, validates them                    |
-| **AIPlayer**    | Uses Minimax to find best moves and play at optimal difficulty       |
+| **AIPlayer**    | Uses Minimax to calculate perfect moves - guaranteed never to lose       |
 
 ### Relationships
 
 - `Game` "has-a" `Board` and two `Player` objects
 - `Player` is extended by `HumanPlayer` and `AIPlayer`
-- `AIPlayer` adds minimax for AI logic
+- `AIPlayer` adds minimax logic for unbeatable gameplay
 
 ---
 
@@ -65,12 +64,13 @@ The `makeMove()` function is declared virtual—in the main game loop, calls go 
 
 ## Minimax Algorithm
 
-**Minimax** is a recursive, adversarial search algorithm that simulates every possible future move to select the one with the best outcome for the AI.  
+**Minimax** is a recursive, adversarial search algorithm that simulates every possible future move to select the one with the best outcome for the AI. The implementation ensures the computer **cannot be defeated** - it will either win or force a draw against any opponent.
+
 **Alpha-beta pruning** optimizes the search by eliminating branches that cannot affect the final decision.
 
 - **Board copies** are used to simulate moves safely in recursion
 - **Score**: +10 (AI win), -10 (Human win), 0 (Draw)
-- **Depth** is used so quicker wins are preferred and longer losses are delayed
+- **Perfect play**: The algorithm evaluates all possible game states to guarantee optimal moves
 
 **Pseudocode Example:**
 ```
@@ -80,6 +80,7 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
 // If minimizing: try all moves for opponent, pick min score, prune with beta
 }
 ```
+
 
 
 ---
@@ -97,10 +98,11 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
     g++ code/main.cpp code/game.cpp code/board.cpp code/player.cpp code/humanplayer.cpp code/aiplayer.cpp -o TicTacToe.exe
     ```
 
-3. **Play:**
+3. **Play (and try to beat the unbeatable):**
     ```
     ./TicTacToe.exe
     ```
+
 ---
 
 ## Technology Stack
@@ -114,14 +116,10 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
 ## Author & Credits
 
 Developed by **Arnav Sinha**  
-LinkedIn: https://www.linkedin.com/in/arnavsinha4334/
-
+LinkedIn: [https://www.linkedin.com/in/arnavsinha4334/](https://www.linkedin.com/in/arnavsinha4334/)
 
 ---
 
 ## Program Output
 
-<img width="1458" height="1198" alt="image" src="https://github.com/user-attachments/assets/c92cec67-3b44-444e-b714-392fcaba1fe9" />
-
-
-
+<img width="815" height="620" alt="image" src="https://github.com/user-attachments/assets/b13e8bb6-9dfe-4547-a306-b962289b4dec" />
