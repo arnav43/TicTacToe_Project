@@ -7,6 +7,7 @@
 An object-oriented implementation of the classic Tic-Tac-Toe game in C++, featuring a robust human-vs-AI mode. The AI uses the **Minimax algorithm with alpha-beta pruning** for mathematically perfect play, making it impossible to defeat. This project demonstrates advanced **OOP principles** and algorithmic programming.
 
 ---
+
 In other words, a fun project that implements OOP and algorithm integration while guaranteeing you'll never beat the computer :P
 
 ---
@@ -25,19 +26,19 @@ In other words, a fun project that implements OOP and algorithm integration whil
 
 <img width="612" height="460" alt="image" src="https://github.com/user-attachments/assets/49cc879b-be78-48c8-9eb4-1f16a97585c8" />
 
-*The diagram above shows clear relationships between classes, demonstrating abstraction, inheritance, and encapsulation.*
+_The diagram above shows clear relationships between classes, demonstrating abstraction, inheritance, and encapsulation._
 
 ---
 
 ## Class Architecture
 
-| Class       | Purpose                                                                 |
-|-------------|------------------------------------------------------------------------|
-| **Game**    | Controls overall gameplay, win/draw detection, player turns, final output |
-| **Board**   | Manages game grid, validating moves, drawing board, win/draw checks      |
-| **Player**  | Abstract base class for all players; defines name, symbol, and APIs      |
-| **HumanPlayer** | Gets player moves from user input, validates them                    |
-| **AIPlayer**    | Uses Minimax to calculate perfect moves - guaranteed never to lose       |
+| Class           | Purpose                                                                   |
+| --------------- | ------------------------------------------------------------------------- |
+| **Game**        | Controls overall gameplay, win/draw detection, player turns, final output |
+| **Board**       | Manages game grid, validating moves, drawing board, win/draw checks       |
+| **Player**      | Abstract base class for all players; defines name, symbol, and APIs       |
+| **HumanPlayer** | Gets player moves from user input, validates them                         |
+| **AIPlayer**    | Uses Minimax to calculate perfect moves - guaranteed never to lose        |
 
 ### Relationships
 
@@ -83,8 +84,6 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
 }
 ```
 
-
-
 ---
 
 ## How to Run
@@ -92,7 +91,7 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
 1. **Clone the repository**
 
    ```
-   git clone https://github.com/yourusername/TicTacToe_Project.git
+   git clone https://github.com/arnav43/TicTacToe_Project.git
    cd TicTacToe_Project
    ```
 
@@ -103,9 +102,9 @@ int minimax(Board board, bool isMaximizing, int alpha, int beta) {
    ```
 
 3. **Play (and try to beat the unbeatable):**
-    ```
-    ./TicTacToe.exe
-    ```
+   ```
+   ./TicTacToe.exe
+   ```
 
 ---
 
