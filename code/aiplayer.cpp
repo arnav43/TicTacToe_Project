@@ -73,9 +73,10 @@ int AIPlayer::minimax(Board board, bool isMaximizing, int alpha, int beta)
             {
                 if (board.isValidMove(row, col))
                 {
-                    board.makeMove(row, col, aiSymbol);
+                    char prev = board.getCell(row, col);
+                    board.setCell(row, col, aiSymbol);
                     int eval = minimax(board, false, alpha, beta);
-                    board.makeMove(row, col, '.'); // Undo move in copy
+                    board.setCell(row, col, prev); // Undo
                     maxEval = std::max(maxEval, eval);
                     alpha = std::max(alpha, eval);
                     if (beta <= alpha)
@@ -85,7 +86,7 @@ int AIPlayer::minimax(Board board, bool isMaximizing, int alpha, int beta)
         }
         return maxEval;
     }
-    else
+    else // Minimizing
     {
         int minEval = std::numeric_limits<int>::max();
         for (int row = 0; row < 3; ++row)
@@ -94,13 +95,14 @@ int AIPlayer::minimax(Board board, bool isMaximizing, int alpha, int beta)
             {
                 if (board.isValidMove(row, col))
                 {
-                    board.makeMove(row, col, oppSymbol);
+                    char prev = board.getCell(row, col); // ✅ Save state
+                    board.setCell(row, col, oppSymbol);  // ✅ Make move
                     int eval = minimax(board, true, alpha, beta);
-                    board.makeMove(row, col, '.'); // Undo move in copy
+                    board.setCell(row, col, prev); // ✅ Restore state
                     minEval = std::min(minEval, eval);
                     beta = std::min(beta, eval);
                     if (beta <= alpha)
-                        break; // Alpha cut-off
+                        break;
                 }
             }
         }

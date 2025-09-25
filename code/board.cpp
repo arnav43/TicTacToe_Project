@@ -9,6 +9,16 @@ Board::Board()
     reset();
 }
 
+void Board::setCell(int row, int col, char value)
+{
+    cells[row][col] = value;
+}
+
+char Board::getCell(int row, int col) const
+{
+    return cells[row][col];
+}
+
 Board::Board(const Board &other)
 {
     for (int i = 0; i < 3; i++)

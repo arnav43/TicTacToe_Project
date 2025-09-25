@@ -11,6 +11,9 @@ public:
     Board(const Board &other);
     Board &operator=(const Board &other);
 
+    void setCell(int row, int col, char value);
+    char getCell(int row, int col) const;
+
     void drawboard() const;
     bool isValidMove(int row, int col) const;
     void makeMove(int row, int col, char symbol);
